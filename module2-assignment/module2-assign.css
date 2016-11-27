@@ -5,43 +5,37 @@
 	      }
 		 section
 		      {
-
-			height 200px;
-			margin:7px;
-			overflow : auto;
-			background : grey;
-			position : relative;
-			padding-left : 5px;
-			padding-right : 5px;
-			padding-bottom : 5px;
-			border: 1px bold black;
-		       
-		       }
-		
-		 h1
-		 {
-
+			height:200px ;
+			margin:7px ;
+			overflow : auto ;
+			background : grey ;
+			position : relative ;
+			padding-left : 5px ;
+			padding-right : 5px ;
+			padding-bottom : 5px ;
+			border: 1px bold black ;		     
+		     }
+		 
+		 h1{
 			text-align: center;
-	
-		 }
+			 }
 
-		#pink{
-
+		#pink
+		    {
 			background: pink;
 			text-align: center;
-
 		    }
 
 		#red{
 			background: red;
 			text-align: center;
 			color: white;
+		    }
 
-		}
-		#yellow{
+		#yellow
+		{
 			background: yellow;
 			text-align: center;
-
 		}
 		section div{
 			position: absolute;
@@ -53,23 +47,23 @@
 		#row{
 			width: 100%;
 		    }
-		@media(min-width: 992px)
+		@media (min-width: 992px)
 		{
-			section{
+			.col-sm-4{
 				float:left;
 				width:31%;
 			}
 		}
 		@media (min-width: 768px) and (max-width: 991px)
 		{   
-			section{
+			.col-md-6{
 				float: left;
 			width:48%;
 		}
 		}
 		@media (max-width: 767px)
 		{
-			section{
+		.col-lg-12{
 				float: left;
 				width: 100%;
 			}
