@@ -1,0 +1,80 @@
+
+	   
+	     * {
+	  	  box-sizing : border-box ;
+	      }
+		 section
+		      {
+			height:200px ;
+			margin:7px ;
+			overflow : auto ;
+			background : grey ;
+			position : relative ;
+			padding-left : 5px ;
+			padding-right : 5px ;
+			padding-bottom : 5px ;
+			border: 1px bold black ;		     
+		     }
+		     p{
+		     	overflow: auto;
+		      padding-left: 5px;
+		      padding-right: 5px;
+		     }
+		 
+		 h1{
+			text-align: center;
+			 }
+
+		#pink
+		    {
+			background: pink;
+			text-align: center;
+		    }
+
+		#red{
+			background: red;
+			text-align: center;
+			color: white;
+		    }
+
+		#yellow
+		{
+			background: yellow;
+			text-align: center;
+		}
+		section div{
+			position: absolute;
+				height: 20px;
+			width:20%;
+			left: 80%;
+			font-weight: bold;
+		}
+		#row{
+			width: 100%;
+		    }
+		@media (min-width: 992px)
+		{
+			.col-sm-4{
+				float:left;
+				width:31%;
+			}
+		}
+		@media (min-width: 768px) and (max-width: 991px)
+		{   
+			.col-md-6{
+				float: left;
+			width:48%;
+		}
+		.full{
+			width: 98%;
+		}
+		
+		}
+		@media (max-width: 767px)
+		{
+		.col-lg-12{
+				float: left;
+				width: 100%;
+			}
+		}
+	
