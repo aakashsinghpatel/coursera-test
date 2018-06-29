@@ -1,0 +1,336 @@
+var doc=db.rest.find();
+var menu,row,jdata;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.menus;
+}
+
+
+
+var doc=db.rest.find();
+while(doc.hasNext()){
+i=i+1;
+doc.next();
+}
+
+var doc=db.rest.find();
+var menu,row,jdata,j=0,i=0;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.menus;
+if(menu===""){
+ j=j+1;
+ continue;
+}
+}
+
+//
+var doc=db.rest.find();
+var menu,row,jdata,i=0,j=0,k=0,l=0;
+while(i<18155){
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.menus;
+if(menu===""){
+ j=j+1;
+ continue;
+}
+else if(typeof menu==="string" && menu.length!=0){
+
+try {    
+jdata=JSON.parse(menu);
+  } catch (e) {
+    
+  }
+k=k+1;
+}
+else{
+l=l+1;
+continue;
+}
+}
+}
+
+
+////
+
+var doc=db.rest123.find();
+var menu,row,jdata,i=0,j=0,k=0,l=0,t=0,r=0;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.menus;
+if(menu===""){
+ j=j+1;
+ continue;
+}
+else if(typeof menu==="string" && menu.length!=0){
+
+try {    
+jdata=JSON.parse(menu);
+db.rest123.update({_id:row._id},{$set:{menus:jdata}},{multi:true});
+r=r+1;
+  } catch (e) {
+     db.rest123.update({_id:row._id},{$set:{menus:{[]}}},{multi:true});
+    t=t+1;
+  }
+k=k+1;
+}
+else{
+l=l+1;
+continue;
+}
+}
+
+
+//
+
+var doc=db.rest123.find();
+var menu,row,jdata,i=0,j=0,k=0,l=0,t=0,r=0;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.features;
+if(menu===""){
+ j=j+1;
+ continue;
+}
+else if(typeof menu==="string" && menu.length!=0){
+
+try {    
+jdata=JSON.parse(menu);
+db.rest123.update({_id:row._id},{$set:{features:jdata}},{multi:true});
+r=r+1;
+  } catch (e) {
+     db.rest123.update({_id:row._id},{$set:{features:{}}},{multi:true});
+    t=t+1;
+  }
+k=k+1;
+}
+else{
+l=l+1;
+continue;
+}
+}
+
+
+
+
+
+
+//
+var doc=db.rest123.find();
+var menu,row,jdata,i=0,j=0,k=0,l=0,t=0,r=0;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.hours;
+if(menu===""){
+ j=j+1;
+ continue;
+}
+else if(typeof menu==="string" && menu.length!=0){
+
+try {    
+jdata=JSON.parse(menu);
+db.rest123.update({_id:row._id},{$set:{hours:jdata}},{multi:true});
+r=r+1;
+  } catch (e) {
+     db.rest123.update({_id:row._id},{$set:{hours:{}}},{multi:true});
+    t=t+1;
+  }
+k=k+1;
+}
+else{
+l=l+1;
+continue;
+}
+}
+
+
+
+
+var menu,row,jdata;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.menus;
+if(menu===""){
+ continue;
+}
+else{
+jdata=JSON.parse(menu);
+db.rest.update({row._id:row._id},{$set:{row.menus:jdata}});
+}
+}
+
+
+
+
+"categories"
+
+
+
+var a = "['a', 'b', 'c']";
+
+var a = row.categories;
+a = a.replace(/'/g, '"');
+b = JSON.parse(a);
+
+
+categories
+//
+var doc=db.rest123.find();
+var menu,row,jdata,i=0,j=0,k=0,l=0,t=0,r=0;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+t=i%10;
+if(t===0){
+db.rest123.update({_id:row._id},{$set:{categories:a}});
+}
+else if(t===1){
+db.rest123.update({_id:row._id},{$set:{categories:b}});
+}
+else if(t===2){
+db.rest123.update({_id:row._id},{$set:{categories:c}});
+}
+else if(t===3){
+db.rest123.update({_id:row._id},{$set:{categories:d}});
+}
+else if(t===4){
+db.rest123.update({_id:row._id},{$set:{categories:e}});
+}
+else if(t===5){
+db.rest123.update({_id:row._id},{$set:{categories:f}});
+}
+else if(t===6){
+db.rest123.update({_id:row._id},{$set:{categories:g}});
+}
+else if(t===7){
+db.rest123.update({_id:row._id},{$set:{categories:h}});
+}
+else if(t===8){
+db.rest123.update({_id:row._id},{$set:{categories:x}});
+}
+else if(t===9){
+db.rest123.update({_id:row._id},{$set:{categories:z}});
+}
+}
+
+
+
+switch (i%10){
+	case 0:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:a}});
+      		break;
+	case 1:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:b}});
+      		break;
+	case 2:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:c}});
+      		break;
+	case 3:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:d}});
+      		break;
+	case 4:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:e}});
+      		break;
+	case 5:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:f}});
+      		break;
+	case 6:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:g}});
+      		break;
+	case 7:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:h}});
+      		break;
+	case 8:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:x}});
+      		break;	
+      	case 9:
+		k=k+1;
+      		db.rest.update({_id:row._id},{$set:{categories:z}});
+      		break;
+}
+}
+
+
+
+db.rest.update({_id:row._id},{$set:{hours:jdata}},{multi:true});
+db.rest.update({_id:row._id},{$set:{hours:{}}},{multi:true});
+
+
+a=["Food & Dining","Catering Services","Legal & Finan"]
+b=["bbq Joint","Vegetarian","Barbecue"]
+c=["Steak", "Steakhouse", "Catering" , "Food & Dining","Vegetarian"]
+d=["Vegan","Sandwich Place and Food","Steakhouse","Vegetarian"]
+e=["Mexican","Vegetarian", "Vegan"]
+f=["Vegetarian", "Vegan","Sandwich Place and Food"]
+g=["Sandwich Place and Food","Steakhouse", "Steak","Vegetarian"]
+h=["Food & Dining","Catering Services","Vegan","Sandwich Place and Food"]
+x=["Pizza Place","Mexican","Vegetarian", "Vegan"]
+y=["Vegetarian"]
+z=["Vegetarian","Barbecue","Food & Dining"] 
+
+
+
+
+ "categories"
+
+
+
+
+var doc=db.rest.find();
+var menu,row,i=0;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+switch (i%10) {
+case 0:
+db.rest.update({_id:row._id},{$set:{categories:a}});
+break;
+case 1:
+db.rest.update({_id:row._id},{$set:{categories:b}});
+break;
+case 2:
+db.rest.update({_id:row._id},{$set:{categories:c}});
+break;
+case 3:
+      		db.rest.update({_id:row._id},{$set:{categories:d}});
+      		break;
+	case 4:
+      		db.rest.update({_id:row._id},{$set:{categories:e}});
+      		break;
+	case 5:
+      		db.rest.update({_id:row._id},{$set:{categories:f}});
+      		break;
+	case 6:
+      		db.rest.update({_id:row._id},{$set:{categories:g}});
+      		break;
+	case 7:
+      		db.rest.update({_id:row._id},{$set:{categories:h}});
+      		break;
+	case 8:
+      		db.rest.update({_id:row._id},{$set:{categories:x}});
+      		break;	
+      	case 9:
+      		db.rest.update({_id:row._id},{$set:{categories:z}});
+      		break;
+    	default:
+		break;
+         
+}
+}

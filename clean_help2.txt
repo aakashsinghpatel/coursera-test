@@ -1,0 +1,21 @@
+["Mexican","Vegetarian", "Vegan","Sandwich Place and Food","Steakhouse", "Steak", "Steakhouse", "Catering" , "Food & Dining"]
+"bbq Joint","Barbecue","Food & Dining","Catering Services","Legal & Finan"
+
+
+
+a=["Food & Dining","Catering Services","Legal & Finan"]
+b=["bbq Joint","Vegetarian","Barbecue"]
+c=["Steak", "Steakhouse", "Catering" , "Food & Dining"]
+d=["Vegan","Sandwich Place and Food","Steakhouse"]
+e=["Mexican","Vegetarian", "Vegan"]
+f=["Vegetarian", "Vegan","Sandwich Place and Food"]
+g=["Sandwich Place and Food","Steakhouse", "Steak"]
+h=["Food & Dining","Catering Services","Vegan","Sandwich Place and Food"]
+x=["Pizza Place"]
+y=["Vegetarian"]
+z=["Vegetarian","Barbecue"] 
+
+
+
+
+ "categories"
