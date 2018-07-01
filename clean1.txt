@@ -1,3 +1,20 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @aakashsinghpatel Sign out
+0
+0 0 aakashsinghpatel/coursera-test
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+coursera-test/clean1.txt
+30eba8e  10 hours ago
+@aakashsinghpatel aakashsinghpatel Add files via upload
+     
+411 lines (287 sloc)  11.4 KB
 var doc=db.rest.find();
 var menu,row,jdata;
 while(doc.hasNext()){
@@ -16,6 +33,15 @@ doc.next();
 
 var doc=db.rest.find();
 var menu,row,jdata,j=0,i=0;
+
+
+
+
+
+price="USD 35.00-40.00"
+
+[,"USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00",
+"USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00","USD 25.00-40.00"]
 while(doc.hasNext()){
 i=i+1;
 row=doc.next();
@@ -129,7 +155,7 @@ continue;
 
 //hours
 
-a=[ { "day" : "Sun", "hour" : "11:00 am - 10:00 pm" }, { "day" : "Fri-Sat", "hour" : "11:00 AM--11:00 PM" }, { "day" : "Mon - Thu", "hour" : "11:00 am - 10:00 pm" } ];
+a=[ { "day" : "Sun", "hour" : "11:00 am - 10:00 pm" }, { "day" : "Fri-Sat", "hour" : "11:00 AM - 11:00 PM" }, { "day" : "Mon - Thu", "hour" : "11:00 am - 10:00 pm" } ];
 var doc=db.rest.find();
 var menu,row,jdata,i=0,j=0,k=0,l=0,t=0,r=0;
 while(doc.hasNext()){
@@ -158,6 +184,95 @@ l=l+1;
 continue;
 }
 }
+
+
+
+//country : "US",
+
+
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
+var cityArray=[];
+var result;
+var ncity;
+ var city = db.rest.find({},{_id:0,city:1});
+for(i=0;i<18155;i++){
+ ncity=city[i].city;
+ result=isInArray(ncity, cityArray);
+if(!result){
+cityArray.push(ncity);
+}
+}
+
+
+var i=0;
+zone=["US-zone-1","US-zone-2","US-zone-3","US-zone-4","US-zone-5","US-zone-6","US-zone-7","US-zone-8","US-zone-9","US-zone-10","US-zone-11"];
+for(t=0;t<3261;t++){
+if(t<=300){
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=600){
+i=1;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=900){
+i=2;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=1200){
+i=3;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=1500){
+i=4;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=1800){
+i=5;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=2100){
+i=6;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=2400){
+i=7;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=2700){
+i=8;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=3000){
+i=9;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+else if(t<=3300){
+i=10;
+db.rest.update({city:cityArray[t]},{$set:{country:zone[i]}},{multi:true});
+}
+}
+
+
+//pricerange
+"priceRange"
+
+p="USD 35.00-40.00";
+var doc=db.rest.find();
+var menu,row,jdata,i=0,j=0,k=0,l=0,t=0,r=0;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+menu=row.priceRange;
+if(menu===""){
+  db.rest.update({_id:row._id},{$set:{priceRange:p}});
+ j=j+1;
+
+}
+}
+
+
 
 
 
@@ -247,48 +362,19 @@ db.rest.update({_id:row._id},{$set:{categories:z}});
 
 
 
-switch (i%10){
-	case 0:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:a}});
-      		break;
-	case 1:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:b}});
-      		break;
-	case 2:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:c}});
-      		break;
-	case 3:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:d}});
-      		break;
-	case 4:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:e}});
-      		break;
-	case 5:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:f}});
-      		break;
-	case 6:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:g}});
-      		break;
-	case 7:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:h}});
-      		break;
-	case 8:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:x}});
-      		break;	
-      	case 9:
-		k=k+1;
-      		db.rest.update({_id:row._id},{$set:{categories:z}});
-      		break;
-}
+
+
+
+//rating
+
+var doc=db.rest.find();
+var menu,row,jdata,i=0,j=0,k=0,l=0,t=0,r=0,a;;
+while(doc.hasNext()){
+i=i+1;
+row=doc.next();
+a =Math.floor(Math.random() * 4)+1;
+db.rest.update({_id:row._id},{$set:{"rating":a}});
+
 }
 
 
@@ -304,31 +390,6 @@ switch (i%10){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-db.rest.update({_id:row._id},{$set:{hours:jdata}},{multi:true});
-db.rest.update({_id:row._id},{$set:{hours:{}}},{multi:true});
 
 
 a=["Food & Dining","Catering Services","Legal & Finan"]
@@ -350,62 +411,38 @@ z=["Vegetarian","Barbecue","Food & Dining"]
 
 
 
-
-var doc=db.rest.find();
-var menu,row,i=0;
-while(doc.hasNext()){
-i=i+1;
-row=doc.next();
-switch (i%10) {
-case 0:
-db.rest.update({_id:row._id},{$set:{categories:a}});
-break;
-case 1:
-db.rest.update({_id:row._id},{$set:{categories:b}});
-break;
-case 2:
-db.rest.update({_id:row._id},{$set:{categories:c}});
-break;
-case 3:
-      		db.rest.update({_id:row._id},{$set:{categories:d}});
-      		break;
-	case 4:
-      		db.rest.update({_id:row._id},{$set:{categories:e}});
-      		break;
-	case 5:
-      		db.rest.update({_id:row._id},{$set:{categories:f}});
-      		break;
-	case 6:
-      		db.rest.update({_id:row._id},{$set:{categories:g}});
-      		break;
-	case 7:
-      		db.rest.update({_id:row._id},{$set:{categories:h}});
-      		break;
-	case 8:
-      		db.rest.update({_id:row._id},{$set:{categories:x}});
-      		break;	
-      	case 9:
-      		db.rest.update({_id:row._id},{$set:{categories:z}});
-      		break;
-    	default:
-		break;
-         
-}
-}
-
-
-
-
-
-
-
 a= [ { "key" : "Outdoor Seating", "value" : "Yes" }, { "key" : "Service Rating", "value" : "4.5 of 5 stars" }, { "key" : "Bike Parking", "value" : "Yes" }, { "key" : "TripAdvisor Overall Rating", "value" : "4.0" }, { "key" : "Takes Reservations", "value" : "No" }, { "key" : "Alcohol", "value" : "Full Bar" }]
 
 
 
-a=[ { "descriptions" : "BBQ, Cajun, or teriyaki", "name" : "Chicken", "prices" : "USD 0.00" }, { "descriptions" : "includes fries and a drink", "name" : "10 and Under", "prices" : "USD 3.69" }, { "descriptions" : "choice of potato and Texas toast", "name" : "Chopped Steak Sandwich", "prices" : "USD 5.49" }, { "descriptions" : "choice of potato and Texas toast", "name" : "Philly Steak Sandwich", "prices" : "USD 6.19" }, { "descriptions" : "no side item included", "name" : "Cajun Chicken Pasta", "prices" : "USD 7.79" }, { "descriptions" : "fried, BBQ, Cajun or teriyaki", "name" : "Chicken Sandwich", "prices" : "USD 3.29" }]
-, { "name" : "Desserts", "prices" : "USD 1.99" }, { "name" : "Hamburger", "prices" : [ "USD 2.99", "USD 3.69" ] }, { "name" : "Flamekist Burger", "prices" : "USD 4.99" }, { "name" : "Country Fried Steak", "prices" : "USD 6.49" }, { "name" : "Onion Rings", "prices" : "USD 1.99" }, { "name" : "Petite Sirloin", "prices" : "USD 6.49" }, { "name" : "Jr. Chopped Sirloin Steak", "prices" : "USD 4.99" }, { "name" : "Grilled Cheese", "prices" : "USD 3.69" }, { "name" : "Filet Mignon", "prices" : "USD 15.99" }]
 
 
 
-, { "name" : "Potato Sweet Potato", "prices" : "USD 2.29" }, { "name" : "The Biggest One We Got", "prices" : "USD 13.99" }, { "name" : "Coffee", "prices" : "USD 1.69" }, { "name" : "Thick Sirloin", "prices" : "USD 10.29" }, { "name" : "French Fries", "prices" : "USD 1.59" }, { "name" : "Mixed Vegetables", "prices" : "USD 1.49" }, { "name" : "Sirloin Tips", "prices" : [ "USD 6.49", "USD 4.99" ] }, { "name" : "T - Bone", "prices" : "USD 13.99" }, { "name" : "1 Pc Dinner", "prices" : "USD 6.49" }, { "name" : "Fried Shrimp", "prices" : "USD 10.69" }, { "name" : "New York Strip", "prices" : "USD 13.39" }, { "name" : "1/2 Rack Bbq Pork Ribs", "prices" : "USD 9.29" }, { "name" : "Soup With A Meal", "prices" : "USD 1.89" }, { "name" : "Bacon Cheeseburger", "prices" : "USD 3.49" }, { "name" : "Complete Service In 'to Go' Orders", "prices" : "USD 0.25" }, { "name" : "Cheeseburger", "prices" : "USD 3.69" }, { "name" : "2 Pc Dinner", "prices" : "USD 7.79" }, { "name" : "Grilled Shrimp", "prices" : "USD 10.69" }, { "name" : "Cheese Burger", "prices" : "USD 3.19" }, { "name" : "Soup Alone", "prices" : "USD 2.39" }, { "name" : "Soft Drinks", "prices" : "USD 1.69" }, { "name" : "Chopped Sirloin Steak", "prices" : "USD 6.29" }, { "name" : "Milk", "prices" : "USD 1.39" }, { "name" : "Large Sirloin", "prices" : "USD 10.99" }, { "name" : "Iced Tea", "prices" : "USD 1.69" }, { "name" : "3 Pc. Chicken Tenders", "prices" : "USD 4.99" }, { "name" : "Shrimp", "prices" : "USD 3.69" }, { "name" : "Steak and Chicken", "prices" : "USD 10.79" }, { "name" : "By The Pound", "prices" : "USD 2.59" }, { "name" : "Ribeye", "prices" : "USD 13.39" }, { "name" : "1 Pc. Grilled Chicken", "prices" : "USD 4.99" }, { "name" : "Chicken Tenders", "prices" : [ "USD 7.19", "USD 3.69" ] }, { "name" : "Regular Sirloin", "prices" : "USD 9.29" }]
+
+
+
+
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
+var cityArray=[];
+var result;
+var ncity;
+ var city = db.rest.find({},{_id:0,country:1});
+for(i=0;i<18155;i++){
+ ncity=city[i].country;
+ result=isInArray(ncity, cityArray);
+if(!result){
+cityArray.push(ncity);
+}
+}
+
+
+
+
+
+
+ var doc = db.rest.find({},{_id:0});
+ a =Math.floor(Math.random() * 4)+1;
+row=doc.next()
+db.rest.update({_id:row._id}, {$set: {"rating": a}})
