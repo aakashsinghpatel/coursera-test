@@ -346,8 +346,8 @@ db.rest.update({_id:row._id},{$set:{categories:z}});
 
 
 
-
-
+//dataupdate
+db.rest.update({},{$unset:{claimed:"",dateOpened:"",dateUpdated:"",facebookPageURL:"",isClosed:"",key:"",languages:"",menuURL:"",paymentTypes:"",province:"",sic:"",twitter:""}},{multi:true});
 
 
 
